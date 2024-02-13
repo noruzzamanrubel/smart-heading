@@ -20,13 +20,13 @@ const attributes = {
     type: "string",
     default: "h2"
   },
-  custom_class: {
-    type: "string"
-  },
   text_color: {
     type: "string"
   },
   background_color: {
+    type: "string"
+  },
+  custom_class: {
     type: "string"
   }
 };
