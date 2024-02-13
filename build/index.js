@@ -14,12 +14,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 const attributes = {
   text: {
-    type: "string",
-    default: "Hello World from Rubel"
+    type: "string"
   },
   tag: {
     type: "string",
     default: "h2"
+  },
+  custom_class: {
+    type: "string"
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (attributes);
@@ -56,13 +58,16 @@ function Edit({
 }) {
   const {
     text,
-    tag
+    tag,
+    custom_class
   } = attributes;
-  const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)();
+  const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
+    className: custom_class ? custom_class : ''
+  });
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Panel Title')
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Heading', 'smart-heading')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Select Tag'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Select Tag', 'smart-heading'),
     value: tag,
     options: [{
       value: 'h1',
@@ -95,6 +100,12 @@ function Edit({
     onChange: value => setAttributes({
       tag: value
     })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Additional Class', 'smart-heading'),
+    value: custom_class,
+    onChange: value => setAttributes({
+      custom_class: value
+    })
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     ...blockProps,
     tagName: tag,
@@ -102,7 +113,7 @@ function Edit({
     onChange: value => setAttributes({
       text: value
     }),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Heading...')
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Heading...', 'smart-heading')
   }));
 }
 
@@ -161,9 +172,14 @@ function save({
 }) {
   const {
     text,
-    tag
+    tag,
+    custom_class
   } = attributes;
+  const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
+    className: custom_class ? custom_class : ''
+  });
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+    ...blockProps,
     tagName: tag,
     value: text
   });

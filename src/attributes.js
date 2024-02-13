@@ -1,11 +1,13 @@
 const attributes = {
     text: {
         type : "string",
-        default: "Hello World from Rubel"
     },
     tag: {
         type : "string",
         default: "h2" 
+    },
+    custom_class:{
+        type: "string"
     }
 }
 export default attributes;
