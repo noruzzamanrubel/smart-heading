@@ -8,6 +8,12 @@ const attributes = {
     },
     custom_class:{
         type: "string"
-    }
+    },
+    text_color:{
+        type: "string"
+    },
+    background_color:{
+        type: "string"
+    },
 }
 export default attributes;

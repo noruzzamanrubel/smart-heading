@@ -1,11 +1,11 @@
 import { __ } from '@wordpress/i18n';
-import { useBlockProps, RichText, InspectorControls } from '@wordpress/block-editor';
+import { useBlockProps, RichText, InspectorControls, PanelColorSettings } from '@wordpress/block-editor';
 import { SelectControl, PanelBody, TextControl } from '@wordpress/components';
 
 import './editor.scss';
 
 export default function Edit({ attributes, setAttributes }) {
-    const { text, tag, custom_class } = attributes;
+    const { text, tag, custom_class, text_color, background_color } = attributes;
     const blockProps = useBlockProps({
         className: custom_class ? custom_class : ''
     });
@@ -36,13 +36,39 @@ export default function Edit({ attributes, setAttributes }) {
                         onChange={(value) => setAttributes({ custom_class: value })}
                     />
                 </PanelBody>
+				<PanelColorSettings
+					title={__('Color', 'smart-heading')}
+					enableAlpha={true}
+					colorSettings={[
+						{
+							value: text_color,
+							onChange: (value) => setAttributes({ text_color: value }),
+							label: __('Text Color', 'smart-heading'),
+						},
+						{
+							value: background_color,
+							onChange: (value) => setAttributes({ background_color: value }),
+							label: __('Background Color', 'smart-heading'),
+						},
+					]}
+					colors={[
+						{ name: 'White', color: '#ffffff' },
+						{ name: 'Red', color: '#ff0000' },
+						{ name: 'Green', color: '#00ff00' },
+						{ name: 'Blue', color: '#0000ff' },
+						{ name: 'Yellow', color: '#ffff00' },
+						{ name: 'Orange', color: '#ffa500' },
+					]}
+				/>
             </InspectorControls>
+
             <RichText
                 {...blockProps}
                 tagName={tag}
                 value={text}
                 onChange={(value) => setAttributes({ text: value })}
                 placeholder={__('Heading...', 'smart-heading')}
+                style={{ color: text_color, backgroundColor: background_color }}
             />
         </>
     );

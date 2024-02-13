@@ -22,6 +22,12 @@ const attributes = {
   },
   custom_class: {
     type: "string"
+  },
+  text_color: {
+    type: "string"
+  },
+  background_color: {
+    type: "string"
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (attributes);
@@ -59,7 +65,9 @@ function Edit({
   const {
     text,
     tag,
-    custom_class
+    custom_class,
+    text_color,
+    background_color
   } = attributes;
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
     className: custom_class ? custom_class : ''
@@ -106,14 +114,53 @@ function Edit({
     onChange: value => setAttributes({
       custom_class: value
     })
-  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Color', 'smart-heading'),
+    enableAlpha: true,
+    colorSettings: [{
+      value: text_color,
+      onChange: value => setAttributes({
+        text_color: value
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Text Color', 'smart-heading')
+    }, {
+      value: background_color,
+      onChange: value => setAttributes({
+        background_color: value
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Background Color', 'smart-heading')
+    }],
+    colors: [{
+      name: 'White',
+      color: '#ffffff'
+    }, {
+      name: 'Red',
+      color: '#ff0000'
+    }, {
+      name: 'Green',
+      color: '#00ff00'
+    }, {
+      name: 'Blue',
+      color: '#0000ff'
+    }, {
+      name: 'Yellow',
+      color: '#ffff00'
+    }, {
+      name: 'Orange',
+      color: '#ffa500'
+    }]
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     ...blockProps,
     tagName: tag,
     value: text,
     onChange: value => setAttributes({
       text: value
     }),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Heading...', 'smart-heading')
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Heading...', 'smart-heading'),
+    style: {
+      color: text_color,
+      backgroundColor: background_color
+    }
   }));
 }
 
@@ -173,7 +220,9 @@ function save({
   const {
     text,
     tag,
-    custom_class
+    custom_class,
+    text_color,
+    background_color
   } = attributes;
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
     className: custom_class ? custom_class : ''
@@ -181,7 +230,11 @@ function save({
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
     ...blockProps,
     tagName: tag,
-    value: text
+    value: text,
+    style: {
+      color: text_color,
+      backgroundColor: background_color
+    }
   });
 }
 
