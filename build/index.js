@@ -28,6 +28,10 @@ const attributes = {
   },
   custom_class: {
     type: "string"
+  },
+  align: {
+    type: "string",
+    default: "left"
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (attributes);
@@ -67,14 +71,23 @@ function Edit({
     tag,
     custom_class,
     text_color,
-    background_color
+    background_color,
+    align
   } = attributes;
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
     className: custom_class ? custom_class : ''
   });
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Heading', 'smart-heading')
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    htmlFor: "alignment-toolbar"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Alignment', 'smart-heading')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.AlignmentToolbar, {
+    value: align,
+    onChange: value => setAttributes({
+      align: value
+    }),
+    isCollapsed: false
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Title Level', 'smart-heading'),
     value: tag,
     options: [{
@@ -155,6 +168,12 @@ function Edit({
       name: 'Orange',
       color: '#ffa500'
     }]
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.BlockControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.AlignmentToolbar, {
+    value: align,
+    onChange: value => setAttributes({
+      align: value
+    }),
+    isCollapsed: false
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     ...blockProps,
     tagName: tag,
@@ -165,7 +184,8 @@ function Edit({
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Heading...', 'smart-heading'),
     style: {
       color: text_color,
-      backgroundColor: background_color
+      backgroundColor: background_color,
+      textAlign: align
     }
   }));
 }
@@ -228,7 +248,8 @@ function save({
     tag,
     custom_class,
     text_color,
-    background_color
+    background_color,
+    align
   } = attributes;
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
     className: custom_class ? custom_class : ''
@@ -239,7 +260,8 @@ function save({
     value: text,
     style: {
       color: text_color,
-      backgroundColor: background_color
+      backgroundColor: background_color,
+      textAlign: align
     }
   });
 }

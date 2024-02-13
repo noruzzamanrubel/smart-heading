@@ -15,5 +15,9 @@ const attributes = {
     custom_class:{
         type: "string"
     },
+    align: {
+        type: "string",
+        default: "left",
+    },
 }
 export default attributes;

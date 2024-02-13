@@ -1,11 +1,32 @@
 import { __ } from '@wordpress/i18n';
-import { useBlockProps, RichText, InspectorControls, PanelColorSettings } from '@wordpress/block-editor';
-import { SelectControl, PanelBody, TextControl } from '@wordpress/components';
+import { 
+    useBlockProps, 
+    RichText, 
+    InspectorControls, 
+    PanelColorSettings,
+    BlockControls,
+    AlignmentToolbar,
+} from '@wordpress/block-editor';
+
+import { SelectControl,
+    PanelBody,
+    TextControl,  
+} from '@wordpress/components';
+
 
 import './editor.scss';
 
 export default function Edit({ attributes, setAttributes }) {
-    const { text, tag, custom_class, text_color, background_color } = attributes;
+    const { 
+        text, 
+        tag, 
+        custom_class, 
+        text_color, 
+        background_color,
+        align,
+
+    } = attributes;
+
     const blockProps = useBlockProps({
         className: custom_class ? custom_class : ''
     });
@@ -14,6 +35,13 @@ export default function Edit({ attributes, setAttributes }) {
         <>
             <InspectorControls>
                 <PanelBody title={__('Heading', 'smart-heading')}>
+                    <p htmlFor="alignment-toolbar">{__('Alignment', 'smart-heading')}</p>
+                    <AlignmentToolbar
+                        value={align}
+                        onChange={(value) => setAttributes({ align: value })}
+                        isCollapsed={false}
+                    />
+
                     <SelectControl
                         label={__('Title Level', 'smart-heading')}
                         value={tag}
@@ -67,13 +95,21 @@ export default function Edit({ attributes, setAttributes }) {
 				/>
             </InspectorControls>
 
+            <BlockControls>
+                <AlignmentToolbar
+                    value={align}
+                    onChange={(value) => setAttributes({ align: value })}
+                    isCollapsed={false}
+                />
+			</BlockControls>
+
             <RichText
                 {...blockProps}
                 tagName={tag}
                 value={text}
                 onChange={(value) => setAttributes({ text: value })}
                 placeholder={__('Heading...', 'smart-heading')}
-                style={{ color: text_color, backgroundColor: background_color }}
+                style={{ color: text_color, backgroundColor: background_color, textAlign: align }}
             />
         </>
     );
