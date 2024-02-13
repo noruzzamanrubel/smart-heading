@@ -12,12 +12,13 @@ const attributes = {
     background_color:{
         type: "string"
     },
-    custom_class:{
-        type: "string"
-    },
     align: {
         type: "string",
         default: "left",
+    },
+    heading_border: {
+        type: "string",
+        default: "none",
     },
 }
 export default attributes;

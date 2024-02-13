@@ -26,12 +26,13 @@ const attributes = {
   background_color: {
     type: "string"
   },
-  custom_class: {
-    type: "string"
-  },
   align: {
     type: "string",
     default: "left"
+  },
+  heading_border: {
+    type: "string",
+    default: "none"
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (attributes);
@@ -69,23 +70,32 @@ function Edit({
   const {
     text,
     tag,
-    custom_class,
     text_color,
     background_color,
-    align
+    align,
+    heading_border
   } = attributes;
-  const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
-    className: custom_class ? custom_class : ''
-  });
+  const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)();
+
+  // Define a variable to hold the separator styles based on heading_border
+  const separatorStyles = heading_border !== 'none' ? {
+    display: 'inline-block',
+    margin: '0 0 10px 0',
+    width: '12%',
+    borderTop: `2px ${heading_border} #0170b9`,
+    marginBottom: '15px'
+  } : {};
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Heading', 'smart-heading')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     htmlFor: "alignment-toolbar"
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Alignment', 'smart-heading')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.AlignmentToolbar, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Alignment', 'smart-heading'),
     value: align,
     onChange: value => setAttributes({
       align: value
     }),
+    controls: ['left', 'center', 'right', 'justify'],
     isCollapsed: false
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Title Level', 'smart-heading'),
@@ -120,18 +130,37 @@ function Edit({
     }],
     onChange: value => setAttributes({
       tag: value
-    })
+    }),
+    isCollapsed: false
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Title Text', 'smart-heading'),
     value: text,
     onChange: value => setAttributes({
       text: value
     })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Additional Class', 'smart-heading'),
-    value: custom_class,
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Separator', 'smart-heading')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Style', 'smart-heading'),
+    value: heading_border,
+    options: [{
+      value: 'none',
+      label: 'None'
+    }, {
+      value: 'solid',
+      label: 'solid'
+    }, {
+      value: 'double',
+      label: 'Double'
+    }, {
+      value: 'dashed',
+      label: 'Dashed'
+    }, {
+      value: 'dotted',
+      label: 'Dotted'
+    }],
     onChange: value => setAttributes({
-      custom_class: value
+      heading_border: value
     })
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Color', 'smart-heading'),
@@ -169,13 +198,15 @@ function Edit({
       color: '#ffa500'
     }]
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.BlockControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.AlignmentToolbar, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Alignment', 'smart-heading'),
     value: align,
     onChange: value => setAttributes({
       align: value
     }),
-    isCollapsed: false
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
-    ...blockProps,
+    controls: ['left', 'center', 'right', 'justify']
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    ...blockProps
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: tag,
     value: text,
     onChange: value => setAttributes({
@@ -187,7 +218,10 @@ function Edit({
       backgroundColor: background_color,
       textAlign: align
     }
-  }));
+  }), heading_border !== 'none' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `smart-title-separator`,
+    style: separatorStyles
+  })));
 }
 
 /***/ }),
@@ -246,16 +280,22 @@ function save({
   const {
     text,
     tag,
-    custom_class,
     text_color,
     background_color,
-    align
+    align,
+    heading_border
   } = attributes;
-  const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
-    className: custom_class ? custom_class : ''
-  });
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
-    ...blockProps,
+  const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save();
+  const separatorStyles = heading_border !== 'none' ? {
+    display: 'inline-block',
+    margin: '0 0 10px 0',
+    width: '12%',
+    borderTop: `2px ${heading_border} #0170b9`,
+    marginBottom: '15px'
+  } : {};
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    ...blockProps
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
     tagName: tag,
     value: text,
     style: {
@@ -263,7 +303,10 @@ function save({
       backgroundColor: background_color,
       textAlign: align
     }
-  });
+  }), heading_border !== 'none' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `smart-title-separator`,
+    style: separatorStyles
+  })));
 }
 
 /***/ }),

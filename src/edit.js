@@ -8,9 +8,12 @@ import {
     AlignmentToolbar,
 } from '@wordpress/block-editor';
 
-import { SelectControl,
+import { 
+    SelectControl,
     PanelBody,
-    TextControl,  
+    TextControl,
+    ButtonGroup,
+    Button
 } from '@wordpress/components';
 
 
@@ -20,25 +23,34 @@ export default function Edit({ attributes, setAttributes }) {
     const { 
         text, 
         tag, 
-        custom_class, 
         text_color, 
         background_color,
         align,
+        heading_border
 
     } = attributes;
 
-    const blockProps = useBlockProps({
-        className: custom_class ? custom_class : ''
-    });
+    const blockProps = useBlockProps();
 
+    // Define a variable to hold the separator styles based on heading_border
+    const separatorStyles = heading_border !== 'none' ? {
+        display: 'inline-block',
+        margin: '0 0 10px 0',
+        width: '12%',
+        borderTop: `2px ${heading_border} #0170b9`,
+        marginBottom: '15px'
+    } : {};
+    
     return (
         <>
             <InspectorControls>
                 <PanelBody title={__('Heading', 'smart-heading')}>
                     <p htmlFor="alignment-toolbar">{__('Alignment', 'smart-heading')}</p>
                     <AlignmentToolbar
+                        label={__('Alignment', 'smart-heading')}
                         value={align}
                         onChange={(value) => setAttributes({ align: value })}
+                        controls={['left', 'center', 'right', 'justify']}
                         isCollapsed={false}
                     />
 
@@ -57,16 +69,26 @@ export default function Edit({ attributes, setAttributes }) {
                             { value: 'span', label: 'Span' },
                         ]}
                         onChange={(value) => setAttributes({ tag: value })}
+                        isCollapsed={false}
                     />
                     <TextControl
                         label={__('Title Text', 'smart-heading')}
                         value={text}
                         onChange={(value) => setAttributes({ text: value })}
                     />
-                    <TextControl
-                        label={__('Additional Class', 'smart-heading')}
-                        value={custom_class}
-                        onChange={(value) => setAttributes({ custom_class: value })}
+                </PanelBody>
+                <PanelBody title={__('Separator', 'smart-heading')}>
+                    <SelectControl
+                        label={__('Style', 'smart-heading')}
+                        value={heading_border}
+                        options={[
+                            { value: 'none', label: 'None' },
+                            { value: 'solid', label: 'solid' },
+                            { value: 'double', label: 'Double' },
+                            { value: 'dashed', label: 'Dashed' },
+                            { value: 'dotted', label: 'Dotted' },
+                        ]}
+                        onChange={(value) => setAttributes({ heading_border: value })}
                     />
                 </PanelBody>
 				<PanelColorSettings
@@ -97,20 +119,29 @@ export default function Edit({ attributes, setAttributes }) {
 
             <BlockControls>
                 <AlignmentToolbar
+                    label={__('Alignment', 'smart-heading')}
                     value={align}
                     onChange={(value) => setAttributes({ align: value })}
-                    isCollapsed={false}
+                    controls={['left', 'center', 'right', 'justify']}
                 />
 			</BlockControls>
 
-            <RichText
-                {...blockProps}
-                tagName={tag}
-                value={text}
-                onChange={(value) => setAttributes({ text: value })}
-                placeholder={__('Heading...', 'smart-heading')}
-                style={{ color: text_color, backgroundColor: background_color, textAlign: align }}
-            />
+            <div {...blockProps}>
+                <RichText
+                    tagName={tag}
+                    value={text}
+                    onChange={(value) => setAttributes({ text: value })}
+                    placeholder={__('Heading...', 'smart-heading')}
+                    style={{
+                        color: text_color,
+                        backgroundColor: background_color,
+                        textAlign: align,
+                    }}
+                />
+                {heading_border !== 'none' && (
+                    <div className={`smart-title-separator`} style={separatorStyles}></div>
+                )}
+            </div>
         </>
     );
 }
