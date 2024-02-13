@@ -15,7 +15,7 @@ export default function Edit({ attributes, setAttributes }) {
             <InspectorControls>
                 <PanelBody title={__('Heading', 'smart-heading')}>
                     <SelectControl
-                        label={__('Select Tag', 'smart-heading')}
+                        label={__('Title Level', 'smart-heading')}
                         value={tag}
                         options={[
                             { value: 'h1', label: 'H1' },
@@ -29,6 +29,11 @@ export default function Edit({ attributes, setAttributes }) {
                             { value: 'span', label: 'Span' },
                         ]}
                         onChange={(value) => setAttributes({ tag: value })}
+                    />
+                    <TextControl
+                        label={__('Title Text', 'smart-heading')}
+                        value={text}
+                        onChange={(value) => setAttributes({ text: value })}
                     />
                     <TextControl
                         label={__('Additional Class', 'smart-heading')}
