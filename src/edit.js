@@ -12,8 +12,7 @@ import {
     SelectControl,
     PanelBody,
     TextControl,
-    ButtonGroup,
-    Button
+    TabPanel,
 } from '@wordpress/components';
 
 
@@ -45,86 +44,124 @@ export default function Edit({ attributes, setAttributes }) {
         <>
             <InspectorControls>
                 <PanelBody title={__('Heading', 'smart-heading')}>
-                    <p htmlFor="alignment-toolbar">{__('Alignment', 'smart-heading')}</p>
-                    <AlignmentToolbar
-                        label={__('Alignment', 'smart-heading')}
-                        value={align}
-                        onChange={(value) => setAttributes({ align: value })}
-                        controls={['left', 'center', 'right', 'justify']}
-                        isCollapsed={false}
-                    />
 
-                    <SelectControl
-                        label={__('Title Level', 'smart-heading')}
-                        value={tag}
-                        options={[
-                            { value: 'h1', label: 'H1' },
-                            { value: 'h2', label: 'H2' },
-                            { value: 'h3', label: 'H3' },
-                            { value: 'h4', label: 'H4' },
-                            { value: 'h5', label: 'H5' },
-                            { value: 'h6', label: 'H6' },
-                            { value: 'p', label: 'P' },
-                            { value: 'div', label: 'Div' },
-                            { value: 'span', label: 'Span' },
+                    <TabPanel
+                        className="my-tab-panel"
+                        activeClass="active-tab"
+                        tabs={[
+                            {
+                                name: 'general',
+                                title: 'General',
+                                className: 'general',
+                            },
+                            {
+                                name: 'style',
+                                title: 'Style',
+                                className: 'style',
+                            },
+                            {
+                                name: 'advanced',
+                                title: 'Advanced',
+                                className: 'advanced',
+                            },
                         ]}
-                        onChange={(value) => setAttributes({ tag: value })}
-                        isCollapsed={false}
-                    />
-                    <TextControl
-                        label={__('Title Text', 'smart-heading')}
-                        value={text}
-                        onChange={(value) => setAttributes({ text: value })}
-                    />
+                    >
+                        {(tab) => (
+                            <div>
+                                {tab.name === 'general' && (
+                                    <>
+                                        <p htmlFor="alignment-toolbar">{__('Alignment', 'smart-heading')}</p>
+                                        <AlignmentToolbar
+                                            value={align}
+                                            onChange={(value) => setAttributes({ align: value })}
+                                            controls={['left', 'center', 'right', 'justify']}
+                                            isCollapsed={false}
+                                        />
+
+                                        <SelectControl
+                                            label={__('Title Level', 'smart-heading')}
+                                            value={tag}
+                                            options={[
+                                                { value: 'h1', label: 'H1' },
+                                                { value: 'h2', label: 'H2' },
+                                                { value: 'h3', label: 'H3' },
+                                                { value: 'h4', label: 'H4' },
+                                                { value: 'h5', label: 'H5' },
+                                                { value: 'h6', label: 'H6' },
+                                                { value: 'p', label: 'P' },
+                                                { value: 'div', label: 'Div' },
+                                                { value: 'span', label: 'Span' },
+                                            ]}
+                                            onChange={(value) => setAttributes({ tag: value })}
+                                            isCollapsed={false}
+                                        />
+
+                                        <TextControl
+                                            label={__('Title Text', 'smart-heading')}
+                                            value={text}
+                                            onChange={(value) => setAttributes({ text: value })}
+                                        />
+
+                                        <SelectControl
+                                            label={__('Style', 'smart-heading')}
+                                            value={heading_border}
+                                            options={[
+                                                { value: 'none', label: 'None' },
+                                                { value: 'solid', label: 'solid' },
+                                                { value: 'double', label: 'Double' },
+                                                { value: 'dashed', label: 'Dashed' },
+                                                { value: 'dotted', label: 'Dotted' },
+                                            ]}
+                                            onChange={(value) => setAttributes({ heading_border: value })}
+                                        />
+                                    </>
+                                )}
+                                {tab.name === 'style' && (
+                                    <>
+                                        <PanelBody title={__('Color', 'smart-heading')}>
+                                            <PanelColorSettings
+                                                title={__('Color', 'smart-heading')}
+                                                enableAlpha={true}
+                                                colorSettings={[
+                                                    {
+                                                        value: text_color,
+                                                        onChange: (value) => setAttributes({ text_color: value }),
+                                                        label: __('Text Color', 'smart-heading'),
+                                                    },
+                                                    {
+                                                        value: background_color,
+                                                        onChange: (value) => setAttributes({ background_color: value }),
+                                                        label: __('Background Color', 'smart-heading'),
+                                                    },
+                                                ]}
+                                                colors={[
+                                                    { name: 'White', color: '#ffffff' },
+                                                    { name: 'Red', color: '#ff0000' },
+                                                    { name: 'Green', color: '#00ff00' },
+                                                    { name: 'Blue', color: '#0000ff' },
+                                                    { name: 'Yellow', color: '#ffff00' },
+                                                    { name: 'Orange', color: '#ffa500' },
+                                                ]}
+                                            />
+                                        </PanelBody>
+                                    </>
+                                )}
+                                {tab.name === 'advanced' && (
+                                    <>
+                                     <p>Advanced settings</p>
+                                    </>
+                                )}
+                            </div>
+                        )}
+                    </TabPanel>
+
                 </PanelBody>
-                <PanelBody title={__('Separator', 'smart-heading')}>
-                    <SelectControl
-                        label={__('Style', 'smart-heading')}
-                        value={heading_border}
-                        options={[
-                            { value: 'none', label: 'None' },
-                            { value: 'solid', label: 'solid' },
-                            { value: 'double', label: 'Double' },
-                            { value: 'dashed', label: 'Dashed' },
-                            { value: 'dotted', label: 'Dotted' },
-                        ]}
-                        onChange={(value) => setAttributes({ heading_border: value })}
-                    />
-                </PanelBody>
-				<PanelColorSettings
-					title={__('Color', 'smart-heading')}
-					enableAlpha={true}
-					colorSettings={[
-						{
-							value: text_color,
-							onChange: (value) => setAttributes({ text_color: value }),
-							label: __('Text Color', 'smart-heading'),
-						},
-						{
-							value: background_color,
-							onChange: (value) => setAttributes({ background_color: value }),
-							label: __('Background Color', 'smart-heading'),
-						},
-					]}
-					colors={[
-						{ name: 'White', color: '#ffffff' },
-						{ name: 'Red', color: '#ff0000' },
-						{ name: 'Green', color: '#00ff00' },
-						{ name: 'Blue', color: '#0000ff' },
-						{ name: 'Yellow', color: '#ffff00' },
-						{ name: 'Orange', color: '#ffa500' },
-					]}
-				/>
+
             </InspectorControls>
 
             <BlockControls>
-                <AlignmentToolbar
-                    label={__('Alignment', 'smart-heading')}
-                    value={align}
-                    onChange={(value) => setAttributes({ align: value })}
-                    controls={['left', 'center', 'right', 'justify']}
-                />
-			</BlockControls>
+                {/* Block controls */}
+            </BlockControls>
 
             <div {...blockProps}>
                 <RichText
