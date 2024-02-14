@@ -16,7 +16,7 @@ const attributes = {
         type: "string",
         default: "left",
     },
-    heading_border: {
+    separator: {
         type: "string",
         default: "none",
     },

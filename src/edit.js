@@ -13,7 +13,36 @@ import {
     PanelBody,
     TextControl,
     TabPanel,
+    BaseControl,
+    Button,
+    ButtonGroup,
 } from '@wordpress/components';
+
+
+/**
+ * Internal depencencies
+ */
+import {
+    WRAPPER_BG,
+    WRAPPER_MARGIN,
+    WRAPPER_PADDING,
+    WRAPPER_BORDER_SHADOW,
+    TITLE_MARGIN,
+    SUBTITLE_MARGIN,
+    separator_MARGIN,
+    separator_LINE_SIZE,
+    separator_ICON_SIZE,
+    separator_WIDTH,
+    separator_POSITION,
+    NORMAL_HOVER,
+    UNIT_TYPES,
+    separator_UNIT_TYPES,
+    PRESETS,
+    TEXT_ALIGN,
+    HEADING,
+    SEPERATOR_STYLES,
+    separator_TYPE,
+} from "./constants/constants";
 
 
 import './editor.scss';
@@ -25,18 +54,18 @@ export default function Edit({ attributes, setAttributes }) {
         text_color, 
         background_color,
         align,
-        heading_border
+        separator
 
     } = attributes;
 
     const blockProps = useBlockProps();
 
-    // Define a variable to hold the separator styles based on heading_border
-    const separatorStyles = heading_border !== 'none' ? {
+    // Define a variable to hold the separator styles based on separator
+    const separatorStyles = separator !== 'none' ? {
         display: 'inline-block',
         margin: '0 0 10px 0',
         width: '12%',
-        borderTop: `2px ${heading_border} #0170b9`,
+        borderTop: `2px ${separator} #0170b9`,
         marginBottom: '15px'
     } : {};
     
@@ -68,61 +97,59 @@ export default function Edit({ attributes, setAttributes }) {
                         {(tab) => (
                             <div className={"sh-tab-controls" + tab.name}>
                                 {tab.name === 'general' && (
-                                    <>
                                     <PanelBody
-                                        title={__(
-                                            "General",
-                                            "smart-heading"
-                                        )}
+                                        title={__("General", "smart-heading")}
                                         initialOpen={true}
                                     >
+                                        <BaseControl
+                                            label={__("Alignment", "smart-heading")}
+                                            id="smart-heading-alignment"
+                                        >
+                                            <ButtonGroup>
+                                                {TEXT_ALIGN.map((item, key) => (
+                                                    <Button
+                                                        key={key}
+                                                        onClick={() => setAttributes({ align: item.value })}
+                                                    >
+                                                        {item.label}
+                                                    </Button>
+                                                ))}
+                                            </ButtonGroup>
+                                        </BaseControl>
 
-                                        <p htmlFor="alignment-toolbar">{__('Alignment', 'smart-heading')}</p>
-                                        <AlignmentToolbar
-                                            value={align}
-                                            onChange={(value) => setAttributes({ align: value })}
-                                            controls={['left', 'center', 'right', 'justify']}
-                                            isCollapsed={false}
-                                        />
-
-                                        <SelectControl
-                                            label={__('Title Level', 'smart-heading')}
-                                            value={tag}
-                                            options={[
-                                                { value: 'h1', label: 'H1' },
-                                                { value: 'h2', label: 'H2' },
-                                                { value: 'h3', label: 'H3' },
-                                                { value: 'h4', label: 'H4' },
-                                                { value: 'h5', label: 'H5' },
-                                                { value: 'h6', label: 'H6' },
-                                                { value: 'p', label: 'P' },
-                                                { value: 'div', label: 'Div' },
-                                                { value: 'span', label: 'Span' },
-                                            ]}
-                                            onChange={(value) => setAttributes({ tag: value })}
-                                            isCollapsed={false}
-                                        />
+                                        <BaseControl
+                                            label={__("Title Level", "smart-heading")}
+                                            id="smart-heading-title-level"
+                                        >
+                                            <ButtonGroup className="smart-heading-alignment sh-html-tag-buttongroup">
+                                                {HEADING.map((item, key) => (
+                                                    <Button
+                                                        key={key}
+                                                        onClick={() => setAttributes({ tag: item.value })}
+                                                    >
+                                                        {item.label}
+                                                    </Button>
+                                                ))}
+                                            </ButtonGroup>
+                                        </BaseControl>
 
                                         <TextControl
-                                            label={__('Title Text', 'smart-heading')}
+                                            label={__("Title Text", "smart-heading")}
                                             value={text}
                                             onChange={(value) => setAttributes({ text: value })}
                                         />
 
-                                        <SelectControl
-                                            label={__('Style', 'smart-heading')}
-                                            value={heading_border}
-                                            options={[
-                                                { value: 'none', label: 'None' },
-                                                { value: 'solid', label: 'solid' },
-                                                { value: 'double', label: 'Double' },
-                                                { value: 'dashed', label: 'Dashed' },
-                                                { value: 'dotted', label: 'Dotted' },
-                                            ]}
-                                            onChange={(value) => setAttributes({ heading_border: value })}
-                                        />
+                                        <BaseControl
+                                            label={__("Separator", "smart-heading")}
+                                            id="smart-heading-separator"
+                                        >
+                                            <SelectControl
+                                                value={separator}
+                                                options={SEPERATOR_STYLES}
+                                                onChange={(value) => setAttributes({ separator: value })}
+                                            />
+                                        </BaseControl>
                                     </PanelBody>
-                                    </>
                                 )}
 
                                 {tab.name === "styles" && (
@@ -189,7 +216,7 @@ export default function Edit({ attributes, setAttributes }) {
                         textAlign: align,
                     }}
                 />
-                {heading_border !== 'none' && (
+                {separator !== 'none' && (
                     <div className={`smart-title-separator`} style={separatorStyles}></div>
                 )}
             </div>

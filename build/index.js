@@ -30,12 +30,186 @@ const attributes = {
     type: "string",
     default: "left"
   },
-  heading_border: {
+  separator: {
     type: "string",
     default: "none"
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (attributes);
+
+/***/ }),
+
+/***/ "./src/constants/constants.js":
+/*!************************************!*\
+  !*** ./src/constants/constants.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   HEADING: () => (/* binding */ HEADING),
+/* harmony export */   NORMAL_HOVER: () => (/* binding */ NORMAL_HOVER),
+/* harmony export */   PRESETS: () => (/* binding */ PRESETS),
+/* harmony export */   SEPERATOR_STYLES: () => (/* binding */ SEPERATOR_STYLES),
+/* harmony export */   SUBTITLE_MARGIN: () => (/* binding */ SUBTITLE_MARGIN),
+/* harmony export */   TEXT_ALIGN: () => (/* binding */ TEXT_ALIGN),
+/* harmony export */   TITLE_MARGIN: () => (/* binding */ TITLE_MARGIN),
+/* harmony export */   UNIT_TYPES: () => (/* binding */ UNIT_TYPES),
+/* harmony export */   WRAPPER_BG: () => (/* binding */ WRAPPER_BG),
+/* harmony export */   WRAPPER_BORDER_SHADOW: () => (/* binding */ WRAPPER_BORDER_SHADOW),
+/* harmony export */   WRAPPER_MARGIN: () => (/* binding */ WRAPPER_MARGIN),
+/* harmony export */   WRAPPER_PADDING: () => (/* binding */ WRAPPER_PADDING),
+/* harmony export */   separator_ICON_SIZE: () => (/* binding */ separator_ICON_SIZE),
+/* harmony export */   separator_LINE_SIZE: () => (/* binding */ separator_LINE_SIZE),
+/* harmony export */   separator_MARGIN: () => (/* binding */ separator_MARGIN),
+/* harmony export */   separator_POSITION: () => (/* binding */ separator_POSITION),
+/* harmony export */   separator_TYPE: () => (/* binding */ separator_TYPE),
+/* harmony export */   separator_UNIT_TYPES: () => (/* binding */ separator_UNIT_TYPES),
+/* harmony export */   separator_WIDTH: () => (/* binding */ separator_WIDTH)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+
+// the consts defined here should be unique from one another
+const WRAPPER_BG = "wrprBg";
+const WRAPPER_MARGIN = "wrpMargin";
+const WRAPPER_PADDING = "wrpPadding";
+const WRAPPER_BORDER_SHADOW = "wrpBorderShadow";
+const TITLE_MARGIN = "titleMargin";
+const SUBTITLE_MARGIN = "subtitleMargin";
+const separator_MARGIN = "separatorMargin";
+const separator_LINE_SIZE = "separatorLineSize";
+const separator_ICON_SIZE = "separatorIconSize";
+const separator_WIDTH = "separatorWidth";
+const UNIT_TYPES = [{
+  label: "px",
+  value: "px"
+}, {
+  label: "em",
+  value: "em"
+}];
+const separator_UNIT_TYPES = [{
+  label: "px",
+  value: "px"
+}, {
+  label: "%",
+  value: "%"
+}, {
+  label: "em",
+  value: "em"
+}];
+const NORMAL_HOVER = [{
+  label: "Normal",
+  value: "normal"
+}, {
+  label: "Hover",
+  value: "hover"
+}];
+const separator_TYPE = [{
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Line", "smart-heading"),
+  value: "line"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Icon", "smart-heading"),
+  value: "icon"
+}];
+const separator_POSITION = [{
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Top", "smart-heading"),
+  value: "top"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Bottom", "smart-heading"),
+  value: "bottom"
+}];
+const PRESETS = [{
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Default", "smart-heading"),
+  value: "preset-0"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Preset 1", "smart-heading"),
+  value: "preset-1"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Preset 2", "smart-heading"),
+  value: "preset-2"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Preset 3", "smart-heading"),
+  value: "preset-3"
+}];
+const TEXT_ALIGN = [{
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)((0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Dashicon, {
+    icon: "editor-alignleft"
+  })),
+  value: "left"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)((0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Dashicon, {
+    icon: "editor-aligncenter"
+  })),
+  value: "center"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)((0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Dashicon, {
+    icon: "editor-alignright"
+  })),
+  value: "right"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)((0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Dashicon, {
+    icon: "menu"
+  })),
+  value: "justify"
+}];
+const HEADING = [{
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("H1", "smart-heading"),
+  value: "h1"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("H2", "smart-heading"),
+  value: "h2"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("H3", "smart-heading"),
+  value: "h3"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("H4", "smart-heading"),
+  value: "h4"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("H5", "smart-heading"),
+  value: "h5"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("H6", "smart-heading"),
+  value: "h6"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("P", "smart-heading"),
+  value: "p"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Div", "smart-heading"),
+  value: "div"
+}];
+const SEPERATOR_STYLES = [{
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("None", "smart-heading"),
+  value: "none"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Solid", "smart-heading"),
+  value: "solid"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Dashed", "smart-heading"),
+  value: "dashed"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Dotted", "smart-heading"),
+  value: "dotted"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Double", "smart-heading"),
+  value: "double"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Groove", "smart-heading"),
+  value: "groove"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Outset", "smart-heading"),
+  value: "outset"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Ridge", "smart-heading"),
+  value: "ridge"
+}];
 
 /***/ }),
 
@@ -57,10 +231,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
+/* harmony import */ var _constants_constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./constants/constants */ "./src/constants/constants.js");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
 
 
 
+
+
+/**
+ * Internal depencencies
+ */
 
 
 function Edit({
@@ -73,16 +253,16 @@ function Edit({
     text_color,
     background_color,
     align,
-    heading_border
+    separator
   } = attributes;
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)();
 
-  // Define a variable to hold the separator styles based on heading_border
-  const separatorStyles = heading_border !== 'none' ? {
+  // Define a variable to hold the separator styles based on separator
+  const separatorStyles = separator !== 'none' ? {
     display: 'inline-block',
     margin: '0 0 10px 0',
     width: '12%',
-    borderTop: `2px ${heading_border} #0170b9`,
+    borderTop: `2px ${separator} #0170b9`,
     marginBottom: '15px'
   } : {};
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
@@ -107,80 +287,41 @@ function Edit({
     }]
   }, tab => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "sh-tab-controls" + tab.name
-  }, tab.name === 'general' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+  }, tab.name === 'general' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("General", "smart-heading"),
     initialOpen: true
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
-    htmlFor: "alignment-toolbar"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Alignment', 'smart-heading')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.AlignmentToolbar, {
-    value: align,
-    onChange: value => setAttributes({
-      align: value
-    }),
-    controls: ['left', 'center', 'right', 'justify'],
-    isCollapsed: false
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Title Level', 'smart-heading'),
-    value: tag,
-    options: [{
-      value: 'h1',
-      label: 'H1'
-    }, {
-      value: 'h2',
-      label: 'H2'
-    }, {
-      value: 'h3',
-      label: 'H3'
-    }, {
-      value: 'h4',
-      label: 'H4'
-    }, {
-      value: 'h5',
-      label: 'H5'
-    }, {
-      value: 'h6',
-      label: 'H6'
-    }, {
-      value: 'p',
-      label: 'P'
-    }, {
-      value: 'div',
-      label: 'Div'
-    }, {
-      value: 'span',
-      label: 'Span'
-    }],
-    onChange: value => setAttributes({
-      tag: value
-    }),
-    isCollapsed: false
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Title Text', 'smart-heading'),
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.BaseControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Alignment", "smart-heading"),
+    id: "smart-heading-alignment"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ButtonGroup, null, _constants_constants__WEBPACK_IMPORTED_MODULE_4__.TEXT_ALIGN.map((item, key) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+    key: key,
+    onClick: () => setAttributes({
+      align: item.value
+    })
+  }, item.label)))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.BaseControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Title Level", "smart-heading"),
+    id: "smart-heading-title-level"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ButtonGroup, {
+    className: "smart-heading-alignment sh-html-tag-buttongroup"
+  }, _constants_constants__WEBPACK_IMPORTED_MODULE_4__.HEADING.map((item, key) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+    key: key,
+    onClick: () => setAttributes({
+      tag: item.value
+    })
+  }, item.label)))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Title Text", "smart-heading"),
     value: text,
     onChange: value => setAttributes({
       text: value
     })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Style', 'smart-heading'),
-    value: heading_border,
-    options: [{
-      value: 'none',
-      label: 'None'
-    }, {
-      value: 'solid',
-      label: 'solid'
-    }, {
-      value: 'double',
-      label: 'Double'
-    }, {
-      value: 'dashed',
-      label: 'Dashed'
-    }, {
-      value: 'dotted',
-      label: 'Dotted'
-    }],
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.BaseControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Separator", "smart-heading"),
+    id: "smart-heading-separator"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
+    value: separator,
+    options: _constants_constants__WEBPACK_IMPORTED_MODULE_4__.SEPERATOR_STYLES,
     onChange: value => setAttributes({
-      heading_border: value
+      separator: value
     })
   }))), tab.name === "styles" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Title", "smart-heading"),
@@ -240,7 +381,7 @@ function Edit({
       backgroundColor: background_color,
       textAlign: align
     }
-  }), heading_border !== 'none' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }), separator !== 'none' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: `smart-title-separator`,
     style: separatorStyles
   })));
@@ -305,14 +446,14 @@ function save({
     text_color,
     background_color,
     align,
-    heading_border
+    separator
   } = attributes;
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save();
-  const separatorStyles = heading_border !== 'none' ? {
+  const separatorStyles = separator !== 'none' ? {
     display: 'inline-block',
     margin: '0 0 10px 0',
     width: '12%',
-    borderTop: `2px ${heading_border} #0170b9`,
+    borderTop: `2px ${separator} #0170b9`,
     marginBottom: '15px'
   } : {};
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -325,7 +466,7 @@ function save({
       backgroundColor: background_color,
       textAlign: align
     }
-  }), heading_border !== 'none' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }), separator !== 'none' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: `smart-title-separator`,
     style: separatorStyles
   })));
