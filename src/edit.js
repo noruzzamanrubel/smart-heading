@@ -42,34 +42,41 @@ export default function Edit({ attributes, setAttributes }) {
     
     return (
         <>
-            <InspectorControls>
-                <PanelBody title={__('Heading', 'smart-heading')}>
-
+            <InspectorControls key="controls">
+                <div className="sh-panel-control">
                     <TabPanel
-                        className="my-tab-panel"
+                        className="sh-parent-tab-panel"
                         activeClass="active-tab"
                         tabs={[
                             {
-                                name: 'general',
-                                title: 'General',
-                                className: 'general',
+                                name: "general",
+                                title: "General",
+                                className: "sh-tab general",
                             },
                             {
-                                name: 'style',
-                                title: 'Style',
-                                className: 'style',
+                                name: "styles",
+                                title: "Style",
+                                className: "sh-tab styles",
                             },
                             {
-                                name: 'advanced',
-                                title: 'Advanced',
-                                className: 'advanced',
+                                name: "advance",
+                                title: "Advanced",
+                                className: "sh-tab advance",
                             },
                         ]}
                     >
                         {(tab) => (
-                            <div>
+                            <div className={"sh-tab-controls" + tab.name}>
                                 {tab.name === 'general' && (
                                     <>
+                                    <PanelBody
+                                        title={__(
+                                            "General",
+                                            "smart-heading"
+                                        )}
+                                        initialOpen={true}
+                                    >
+
                                         <p htmlFor="alignment-toolbar">{__('Alignment', 'smart-heading')}</p>
                                         <AlignmentToolbar
                                             value={align}
@@ -114,11 +121,16 @@ export default function Edit({ attributes, setAttributes }) {
                                             ]}
                                             onChange={(value) => setAttributes({ heading_border: value })}
                                         />
+                                    </PanelBody>
                                     </>
                                 )}
-                                {tab.name === 'style' && (
+
+                                {tab.name === "styles" && (
                                     <>
-                                        <PanelBody title={__('Color', 'smart-heading')}>
+                                        <PanelBody
+                                            title={__("Title", "smart-heading")}
+                                            initialOpen={true}
+                                        >
                                             <PanelColorSettings
                                                 title={__('Color', 'smart-heading')}
                                                 enableAlpha={true}
@@ -146,21 +158,23 @@ export default function Edit({ attributes, setAttributes }) {
                                         </PanelBody>
                                     </>
                                 )}
-                                {tab.name === 'advanced' && (
+                            {tab.name === "advance" && (
                                     <>
-                                     <p>Advanced settings</p>
+                                        <p>Advanced settings</p>
                                     </>
                                 )}
                             </div>
                         )}
                     </TabPanel>
-
-                </PanelBody>
-
+                </div>
             </InspectorControls>
 
             <BlockControls>
-                {/* Block controls */}
+                <AlignmentToolbar
+                    value={align}
+                    onChange={(value) => setAttributes({ align: value })}
+                    controls={['left', 'center', 'right', 'justify']}
+                />
             </BlockControls>
 
             <div {...blockProps}>
