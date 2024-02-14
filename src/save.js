@@ -1,10 +1,25 @@
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 
 export default function save({ attributes }) {
-    const { text, tag, text_color, background_color, align, separator } = attributes;
+    const { 
+        text, 
+        tag, 
+        text_color, 
+        background_color,
+        align,
+        separator,
+        sub_heading_switcher,
+        show_separator_switcher,
+        sub_heading_text,
+        sub_heading_tag,
+        seperatorPosition,
+        subheadingPosition,
+
+    } = attributes;
+
     const blockProps = useBlockProps.save();
 
-    const separatorStyles = separator !== 'none' ? {
+    const separatorStyles = show_separator_switcher ? {
         display: 'inline-block',
         margin: '0 0 10px 0',
         width: '12%',
@@ -15,6 +30,21 @@ export default function save({ attributes }) {
     return (
         <>
             <div {...blockProps}>
+
+                {show_separator_switcher && seperatorPosition === "top" && (
+                    <div className={`smart-title-separator`} style={separatorStyles}></div>
+                )}
+
+                {sub_heading_switcher && subheadingPosition === 'top' && ( 
+                    <RichText.Content
+                        tagName={sub_heading_tag}
+                        value={sub_heading_text}
+                        style={{
+                            textAlign: align,
+                        }}
+                    />
+                )}
+
                 <RichText.Content
                     tagName={tag}
                     value={text}
@@ -24,7 +54,18 @@ export default function save({ attributes }) {
                         textAlign: align,
                     }}
                 />
-                {separator !== 'none' && (
+
+                {sub_heading_switcher && subheadingPosition === 'bottom' && ( 
+                    <RichText.Content
+                        tagName={sub_heading_tag}
+                        value={sub_heading_text}
+                        style={{
+                            textAlign: align,
+                        }}
+                    />
+                )}
+
+                {show_separator_switcher && seperatorPosition === "bottom" && (
                     <div className={`smart-title-separator`} style={separatorStyles}></div>
                 )}
             </div>

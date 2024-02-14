@@ -16,9 +16,16 @@ const attributes = {
   text: {
     type: "string"
   },
+  sub_heading_text: {
+    type: "string"
+  },
   tag: {
     type: "string",
     default: "h2"
+  },
+  sub_heading_tag: {
+    type: "string",
+    default: "p"
   },
   text_color: {
     type: "string"
@@ -32,7 +39,23 @@ const attributes = {
   },
   separator: {
     type: "string",
-    default: "none"
+    default: "solid"
+  },
+  sub_heading_switcher: {
+    type: "boolean",
+    default: false
+  },
+  show_separator_switcher: {
+    type: "boolean",
+    default: false
+  },
+  seperatorPosition: {
+    type: "string",
+    default: "bottom"
+  },
+  subheadingPosition: {
+    type: "string",
+    default: "bottom"
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (attributes);
@@ -65,7 +88,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   separator_POSITION: () => (/* binding */ separator_POSITION),
 /* harmony export */   separator_TYPE: () => (/* binding */ separator_TYPE),
 /* harmony export */   separator_UNIT_TYPES: () => (/* binding */ separator_UNIT_TYPES),
-/* harmony export */   separator_WIDTH: () => (/* binding */ separator_WIDTH)
+/* harmony export */   separator_WIDTH: () => (/* binding */ separator_WIDTH),
+/* harmony export */   subheading_POSITION: () => (/* binding */ subheading_POSITION)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -120,6 +144,13 @@ const separator_TYPE = [{
   value: "icon"
 }];
 const separator_POSITION = [{
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Top", "smart-heading"),
+  value: "top"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Bottom", "smart-heading"),
+  value: "bottom"
+}];
+const subheading_POSITION = [{
   label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Top", "smart-heading"),
   value: "top"
 }, {
@@ -186,9 +217,6 @@ const HEADING = [{
   value: "div"
 }];
 const SEPERATOR_STYLES = [{
-  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("None", "smart-heading"),
-  value: "none"
-}, {
   label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Solid", "smart-heading"),
   value: "solid"
 }, {
@@ -253,12 +281,19 @@ function Edit({
     text_color,
     background_color,
     align,
-    separator
+    separator,
+    sub_heading_switcher,
+    show_separator_switcher,
+    sub_heading_text,
+    sub_heading_tag,
+    seperatorPosition,
+    subheadingPosition
   } = attributes;
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)();
 
   // Define a variable to hold the separator styles based on separator
-  const separatorStyles = separator !== 'none' ? {
+
+  const separatorStyles = show_separator_switcher ? {
     display: 'inline-block',
     margin: '0 0 10px 0',
     width: '12%',
@@ -287,8 +322,10 @@ function Edit({
     }]
   }, tab => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "sh-tab-controls" + tab.name
-  }, tab.name === 'general' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("General", "smart-heading"),
+  }, tab.name === 'general' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "sh-heading-wrapper"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Heading", "smart-heading"),
     initialOpen: true
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.BaseControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Alignment", "smart-heading"),
@@ -299,7 +336,7 @@ function Edit({
       align: item.value
     })
   }, item.label)))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.BaseControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Title Level", "smart-heading"),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Heading Tag", "smart-heading"),
     id: "smart-heading-title-level"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ButtonGroup, {
     className: "smart-heading-alignment sh-html-tag-buttongroup"
@@ -314,16 +351,72 @@ function Edit({
     onChange: value => setAttributes({
       text: value
     })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.BaseControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Separator", "smart-heading"),
-    id: "smart-heading-separator"
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "sh-sub-heading-wrapper"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Sub Heading", "smart-heading"),
+    initialOpen: false
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Sub Heading", "smart-heading"),
+    checked: sub_heading_switcher,
+    onChange: value => setAttributes({
+      sub_heading_switcher: value
+    })
+  }), sub_heading_switcher && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.BaseControl, {
+    id: "smart-sub-heading-position"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Sub Heading Position", "smart-heading"),
+    value: subheadingPosition,
+    options: _constants_constants__WEBPACK_IMPORTED_MODULE_4__.subheading_POSITION,
+    onChange: value => setAttributes({
+      subheadingPosition: value
+    })
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.BaseControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Sub Heading Tag", "smart-heading"),
+    id: "sh-smart-sub-heading-tag"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ButtonGroup, {
+    className: "sh-smart-sub-heading-tag sh-html-tag-buttongroup"
+  }, _constants_constants__WEBPACK_IMPORTED_MODULE_4__.HEADING.map((item, key) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+    key: key,
+    onClick: () => setAttributes({
+      sub_heading_tag: item.value
+    })
+  }, item.label)))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextareaControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Sub Heading Text", "smart-heading"),
+    value: sub_heading_text,
+    onChange: value => setAttributes({
+      sub_heading_text: value
+    })
+  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "sh-separator-wrapper"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Separator", "smart-heading"),
+    initialOpen: false
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Separator", "smart-heading"),
+    checked: show_separator_switcher,
+    onChange: value => setAttributes({
+      show_separator_switcher: value
+    })
+  }), show_separator_switcher && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.BaseControl, {
+    id: "smart-separator-position"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Separator Position", "smart-heading"),
+    value: seperatorPosition,
+    options: _constants_constants__WEBPACK_IMPORTED_MODULE_4__.separator_POSITION,
+    onChange: value => setAttributes({
+      seperatorPosition: value
+    })
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.BaseControl, {
+    id: "smart-separator-style"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Separator Style", "smart-heading"),
     value: separator,
     options: _constants_constants__WEBPACK_IMPORTED_MODULE_4__.SEPERATOR_STYLES,
     onChange: value => setAttributes({
       separator: value
     })
-  }))), tab.name === "styles" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+  })))))), tab.name === "styles" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Title", "smart-heading"),
     initialOpen: true
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
@@ -369,7 +462,20 @@ function Edit({
     controls: ['left', 'center', 'right', 'justify']
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+  }, show_separator_switcher && seperatorPosition === "top" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `smart-title-separator`,
+    style: separatorStyles
+  }), sub_heading_switcher && subheadingPosition === 'top' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: sub_heading_tag,
+    value: sub_heading_text,
+    onChange: value => setAttributes({
+      sub_heading_text: value
+    }),
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Sub heading...', 'smart-heading'),
+    style: {
+      textAlign: align
+    }
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: tag,
     value: text,
     onChange: value => setAttributes({
@@ -381,7 +487,17 @@ function Edit({
       backgroundColor: background_color,
       textAlign: align
     }
-  }), separator !== 'none' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }), sub_heading_switcher && subheadingPosition === 'bottom' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: sub_heading_tag,
+    value: sub_heading_text,
+    onChange: value => setAttributes({
+      sub_heading_text: value
+    }),
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Sub heading...', 'smart-heading'),
+    style: {
+      textAlign: align
+    }
+  }), show_separator_switcher && seperatorPosition === "bottom" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: `smart-title-separator`,
     style: separatorStyles
   })));
@@ -446,10 +562,16 @@ function save({
     text_color,
     background_color,
     align,
-    separator
+    separator,
+    sub_heading_switcher,
+    show_separator_switcher,
+    sub_heading_text,
+    sub_heading_tag,
+    seperatorPosition,
+    subheadingPosition
   } = attributes;
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save();
-  const separatorStyles = separator !== 'none' ? {
+  const separatorStyles = show_separator_switcher ? {
     display: 'inline-block',
     margin: '0 0 10px 0',
     width: '12%',
@@ -458,7 +580,16 @@ function save({
   } : {};
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+  }, show_separator_switcher && seperatorPosition === "top" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `smart-title-separator`,
+    style: separatorStyles
+  }), sub_heading_switcher && subheadingPosition === 'top' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+    tagName: sub_heading_tag,
+    value: sub_heading_text,
+    style: {
+      textAlign: align
+    }
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
     tagName: tag,
     value: text,
     style: {
@@ -466,7 +597,13 @@ function save({
       backgroundColor: background_color,
       textAlign: align
     }
-  }), separator !== 'none' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }), sub_heading_switcher && subheadingPosition === 'bottom' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+    tagName: sub_heading_tag,
+    value: sub_heading_text,
+    style: {
+      textAlign: align
+    }
+  }), show_separator_switcher && seperatorPosition === "bottom" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: `smart-title-separator`,
     style: separatorStyles
   })));

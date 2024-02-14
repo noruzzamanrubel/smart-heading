@@ -39,6 +39,11 @@ export const separator_POSITION = [
 	{ label: __("Bottom", "smart-heading"), value: "bottom" },
 ];
 
+export const subheading_POSITION = [
+	{ label: __("Top", "smart-heading"), value: "top" },
+	{ label: __("Bottom", "smart-heading"), value: "bottom" },
+];
+
 export const PRESETS = [
 	{ label: __("Default", "smart-heading"), value: "preset-0" },
 	{ label: __("Preset 1", "smart-heading"), value: "preset-1" },
@@ -65,7 +70,6 @@ export const HEADING = [
 ];
 
 export const SEPERATOR_STYLES = [
-	{ label: __("None", "smart-heading"), value: "none" },
 	{ label: __("Solid", "smart-heading"), value: "solid" },
 	{ label: __("Dashed", "smart-heading"), value: "dashed" },
 	{ label: __("Dotted", "smart-heading"), value: "dotted" },
