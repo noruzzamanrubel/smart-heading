@@ -14,6 +14,7 @@ export default function save({ attributes }) {
         sub_heading_tag,
         seperatorPosition,
         subheadingPosition,
+        fontFamily,
 
     } = attributes;
 
@@ -32,7 +33,7 @@ export default function save({ attributes }) {
             <div {...blockProps}>
 
                 {show_separator_switcher && seperatorPosition === "top" && (
-                    <div className={`smart-title-separator`} style={separatorStyles}></div>
+                    <div className={`smart-title-separator`} style={{ ...separatorStyles, textAlign: align }}></div>
                 )}
 
                 {sub_heading_switcher && subheadingPosition === 'top' && ( 
@@ -52,6 +53,7 @@ export default function save({ attributes }) {
                         color: text_color,
                         backgroundColor: background_color,
                         textAlign: align,
+                        fontFamily: fontFamily,
                     }}
                 />
 
@@ -66,7 +68,7 @@ export default function save({ attributes }) {
                 )}
 
                 {show_separator_switcher && seperatorPosition === "bottom" && (
-                    <div className={`smart-title-separator`} style={separatorStyles}></div>
+                    <div className={`smart-title-separator`} style={{ ...separatorStyles, textAlign: align }}></div>
                 )}
             </div>
         </>

@@ -1,4 +1,6 @@
 import { __ } from '@wordpress/i18n';
+import { useEffect } from 'react';
+
 import { 
     useBlockProps, 
     RichText, 
@@ -47,6 +49,9 @@ import {
     separator_TYPE,
 } from "./constants/constants";
 
+// Importing only fontFamilyLists
+import { fontFamilyLists } from "./constants/fontFamily";
+
 
 import './editor.scss';
 
@@ -64,6 +69,7 @@ export default function Edit({ attributes, setAttributes }) {
         sub_heading_tag,
         seperatorPosition,
         subheadingPosition,
+        fontFamily,
 
     } = attributes;
 
@@ -78,6 +84,13 @@ export default function Edit({ attributes, setAttributes }) {
         borderTop: `2px ${separator} #0170b9`,
         marginBottom: '15px'
     } : {};
+
+
+    useEffect(() => {
+        if (!fontFamily) {
+            setAttributes({ fontFamily: 'Default' });
+        }
+    }, [fontFamily]);
     
     return (
         <>
@@ -241,6 +254,21 @@ export default function Edit({ attributes, setAttributes }) {
                                             title={__("Title", "smart-heading")}
                                             initialOpen={true}
                                         >
+
+<SelectControl
+    label={__("Font Family", "smart-heading")}
+    options={[
+        { label: 'Default', value: null }, // Set the value to null for the "Default" option
+        { label: 'Arial', value: 'Arial' },
+        { label: 'Helvetica', value: 'Helvetica' },
+        { label: 'Times New Roman', value: 'Times New Roman' },
+        { label: 'Courier New', value: 'Courier New' },
+        { label: 'Verdana', value: 'Verdana' },
+        // Add more font families as needed
+    ]}
+    value={fontFamily} // Set the value directly without a fallback to "Default"
+    onChange={(value) => setAttributes({ fontFamily: value })}
+/>
                                             <PanelColorSettings
                                                 title={__('Color', 'smart-heading')}
                                                 enableAlpha={true}
@@ -290,7 +318,7 @@ export default function Edit({ attributes, setAttributes }) {
             <div {...blockProps}>
 
                 {show_separator_switcher && seperatorPosition === "top" && (
-                    <div className={`smart-title-separator`} style={separatorStyles}></div>
+                    <div className={`smart-title-separator`} style={{ ...separatorStyles, textAlign: align }}></div>
                 )}
 
                 {sub_heading_switcher && subheadingPosition === 'top' && (
@@ -314,6 +342,7 @@ export default function Edit({ attributes, setAttributes }) {
                         color: text_color,
                         backgroundColor: background_color,
                         textAlign: align,
+                        fontFamily: fontFamily
                     }}
                 />
 
@@ -330,7 +359,7 @@ export default function Edit({ attributes, setAttributes }) {
                 )}
                 
                 {show_separator_switcher && seperatorPosition === "bottom" && (
-                    <div className={`smart-title-separator`} style={separatorStyles}></div>
+                    <div className={`smart-title-separator`} style={{ ...separatorStyles, textAlign: align }}></div>
                 )}
             </div>
         </>

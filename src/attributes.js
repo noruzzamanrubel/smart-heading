@@ -43,5 +43,9 @@ const attributes = {
         type: "string",
         default: "bottom",
     },
+    fontFamily: {
+        type: "string",
+        default: "default",
+    },
 }
 export default attributes;
