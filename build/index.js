@@ -1,4 +1,5 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/attributes.js":
@@ -7,7 +8,6 @@
   \***************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -72,7 +72,6 @@ const attributes = {
   \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   FONT_FAMILYS: () => (/* binding */ FONT_FAMILYS),
@@ -548,7 +547,6 @@ const FONT_FAMILYS = [{
   \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
@@ -575,7 +573,6 @@ const fontFamilyLists = _fontsfamilyNameList__WEBPACK_IMPORTED_MODULE_1__["defau
   \**********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -591,7 +588,6 @@ const fontsfamilyNameList = ["Default", "Baloo", "Baloo Bhai", "Baloo Bhaijaan",
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Edit)
@@ -895,7 +891,6 @@ function Edit({
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
@@ -928,7 +923,6 @@ __webpack_require__.r(__webpack_exports__);
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ save)
@@ -1007,9 +1001,11 @@ function save({
 /*!*************************!*\
   !*** ./src/editor.scss ***!
   \*************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nHookWebpackError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: expected \"{\".\n   ╷\n15 │     fontFamily,\r\n   │                ^\n   ╵\n  src\\editor.scss 15:16  root stylesheet\n    at tryRunOrWebpackError (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\HookWebpackError.js:88:9)\n    at __webpack_require_module__ (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:5076:12)\n    at __webpack_require__ (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:5033:18)\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:5104:20\n    at symbolIterator (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3485:9)\n    at done (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3527:9)\n    at Hook.eval [as callAsync] (eval at create (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:15:1)\n    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\tapable\\lib\\Hook.js:18:14)\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:5011:43\n    at symbolIterator (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3482:9)\n    at timesSync (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:2297:7)\n    at Object.eachLimit (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3463:5)\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:4976:16\n    at symbolIterator (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3485:9)\n    at timesSync (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:2297:7)\n    at Object.eachLimit (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3463:5)\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:4944:15\n    at symbolIterator (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3485:9)\n    at done (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3527:9)\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:4890:8\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:3369:32\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\HookWebpackError.js:68:3\n    at Hook.eval [as callAsync] (eval at create (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:15:1)\n    at Cache.store (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Cache.js:107:20)\n    at ItemCacheFacade.store (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\CacheFacade.js:141:15)\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:3369:11\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Cache.js:93:5\n    at Hook.eval [as callAsync] (eval at create (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:16:1)\n    at Cache.get (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Cache.js:75:18)\n    at ItemCacheFacade.get (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\CacheFacade.js:115:15)\n    at Compilation._codeGenerationModule (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:3338:9)\n    at codeGen (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:4878:11)\n    at symbolIterator (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3482:9)\n    at timesSync (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:2297:7)\n    at Object.eachLimit (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3463:5)\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:4908:14\n    at processQueue (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\util\\processAsyncTree.js:61:4)\n    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)\n-- inner error --\nError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: expected \"{\".\n   ╷\n15 │     fontFamily,\r\n   │                ^\n   ╵\n  src\\editor.scss 15:16  root stylesheet\n    at Object.<anonymous> (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\css-loader\\dist\\cjs.js??ruleSet[1].rules[4].use[1]!C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\postcss-loader\\dist\\cjs.js??ruleSet[1].rules[4].use[2]!C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\sass-loader\\dist\\cjs.js??ruleSet[1].rules[4].use[3]!C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\src\\editor.scss:1:7)\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\javascript\\JavascriptModulesPlugin.js:452:10\n    at Hook.eval [as call] (eval at create (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\tapable\\lib\\HookCodeFactory.js:19:10), <anonymous>:7:1)\n    at Hook.CALL_DELEGATE [as _call] (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\tapable\\lib\\Hook.js:14:14)\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:5078:39\n    at tryRunOrWebpackError (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\HookWebpackError.js:83:7)\n    at __webpack_require_module__ (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:5076:12)\n    at __webpack_require__ (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:5033:18)\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:5104:20\n    at symbolIterator (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3485:9)\n    at done (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3527:9)\n    at Hook.eval [as callAsync] (eval at create (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:15:1)\n    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\tapable\\lib\\Hook.js:18:14)\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:5011:43\n    at symbolIterator (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3482:9)\n    at timesSync (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:2297:7)\n    at Object.eachLimit (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3463:5)\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:4976:16\n    at symbolIterator (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3485:9)\n    at timesSync (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:2297:7)\n    at Object.eachLimit (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3463:5)\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:4944:15\n    at symbolIterator (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3485:9)\n    at done (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3527:9)\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:4890:8\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:3369:32\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\HookWebpackError.js:68:3\n    at Hook.eval [as callAsync] (eval at create (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:15:1)\n    at Cache.store (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Cache.js:107:20)\n    at ItemCacheFacade.store (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\CacheFacade.js:141:15)\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:3369:11\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Cache.js:93:5\n    at Hook.eval [as callAsync] (eval at create (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:16:1)\n    at Cache.get (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Cache.js:75:18)\n    at ItemCacheFacade.get (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\CacheFacade.js:115:15)\n    at Compilation._codeGenerationModule (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:3338:9)\n    at codeGen (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:4878:11)\n    at symbolIterator (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3482:9)\n    at timesSync (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:2297:7)\n    at Object.eachLimit (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3463:5)\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:4908:14\n    at processQueue (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\util\\processAsyncTree.js:61:4)\n    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)\n\nGenerated code for C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\css-loader\\dist\\cjs.js??ruleSet[1].rules[4].use[1]!C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\postcss-loader\\dist\\cjs.js??ruleSet[1].rules[4].use[2]!C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\sass-loader\\dist\\cjs.js??ruleSet[1].rules[4].use[3]!C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\src\\editor.scss\n1 | throw new Error(\"Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\\nSassError: expected \\\"{\\\".\\n   ╷\\n15 │     fontFamily,\\r\\n   │                ^\\n   ╵\\n  src\\\\editor.scss 15:16  root stylesheet\");");
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
 
 /***/ }),
 
@@ -1019,7 +1015,6 @@ throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugi
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
@@ -1032,7 +1027,6 @@ __webpack_require__.r(__webpack_exports__);
   \************************/
 /***/ ((module) => {
 
-"use strict";
 module.exports = window["React"];
 
 /***/ }),
@@ -1043,7 +1037,6 @@ module.exports = window["React"];
   \*************************************/
 /***/ ((module) => {
 
-"use strict";
 module.exports = window["wp"]["blockEditor"];
 
 /***/ }),
@@ -1054,7 +1047,6 @@ module.exports = window["wp"]["blockEditor"];
   \********************************/
 /***/ ((module) => {
 
-"use strict";
 module.exports = window["wp"]["blocks"];
 
 /***/ }),
@@ -1065,7 +1057,6 @@ module.exports = window["wp"]["blocks"];
   \************************************/
 /***/ ((module) => {
 
-"use strict";
 module.exports = window["wp"]["components"];
 
 /***/ }),
@@ -1076,7 +1067,6 @@ module.exports = window["wp"]["components"];
   \*********************************/
 /***/ ((module) => {
 
-"use strict";
 module.exports = window["wp"]["element"];
 
 /***/ }),
@@ -1087,7 +1077,6 @@ module.exports = window["wp"]["element"];
   \******************************/
 /***/ ((module) => {
 
-"use strict";
 module.exports = window["wp"]["i18n"];
 
 /***/ }),
@@ -1098,7 +1087,6 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-"use strict";
 module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/smart-heading","version":"0.1.0","title":"Smart Heading","category":"text","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"textdomain":"smart-heading","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
