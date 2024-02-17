@@ -33,7 +33,7 @@ export default function save({ attributes }) {
             <div {...blockProps}>
 
                 {show_separator_switcher && seperatorPosition === "top" && (
-                    <div className={`smart-title-separator`} style={{ ...separatorStyles, textAlign: align }}></div>
+                    <div style={{ ...separatorStyles, textAlign: align }}></div>
                 )}
 
                 {sub_heading_switcher && subheadingPosition === 'top' && ( 
@@ -68,7 +68,7 @@ export default function save({ attributes }) {
                 )}
 
                 {show_separator_switcher && seperatorPosition === "bottom" && (
-                    <div className={`smart-title-separator`} style={{ ...separatorStyles, textAlign: align }}></div>
+                    <div style={{ ...separatorStyles, textAlign: align }}></div>
                 )}
             </div>
         </>

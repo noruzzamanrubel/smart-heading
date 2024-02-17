@@ -1,5 +1,4 @@
 import { __ } from '@wordpress/i18n';
-import { useEffect } from 'react';
 
 import { 
     useBlockProps, 
@@ -47,10 +46,13 @@ import {
     HEADING,
     SEPERATOR_STYLES,
     separator_TYPE,
+    FONT_FAMILYS,
 } from "./constants/constants";
 
 // Importing only fontFamilyLists
 import { fontFamilyLists } from "./constants/fontFamily";
+
+import { createRef, useEffect } from "@wordpress/element";
 
 
 import './editor.scss';
@@ -86,11 +88,17 @@ export default function Edit({ attributes, setAttributes }) {
     } : {};
 
 
-    useEffect(() => {
-        if (!fontFamily) {
-            setAttributes({ fontFamily: 'Default' });
-        }
-    }, [fontFamily]);
+	/* set default values for the style attributes */
+	const elementRef = createRef();
+	useEffect(() => {
+
+		if (!fontFamily) {
+			let defaultFontFamily = window.getComputedStyle(
+				elementRef.current
+			).fontFamily;
+			setAttributes({ fontFamily: defaultFontFamily });
+		}
+	}, [elementRef]);
     
     return (
         <>
@@ -257,15 +265,7 @@ export default function Edit({ attributes, setAttributes }) {
 
 <SelectControl
     label={__("Font Family", "smart-heading")}
-    options={[
-        { label: 'Default', value: null }, // Set the value to null for the "Default" option
-        { label: 'Arial', value: 'Arial' },
-        { label: 'Helvetica', value: 'Helvetica' },
-        { label: 'Times New Roman', value: 'Times New Roman' },
-        { label: 'Courier New', value: 'Courier New' },
-        { label: 'Verdana', value: 'Verdana' },
-        // Add more font families as needed
-    ]}
+    options={FONT_FAMILYS}
     value={fontFamily} // Set the value directly without a fallback to "Default"
     onChange={(value) => setAttributes({ fontFamily: value })}
 />
@@ -333,7 +333,13 @@ export default function Edit({ attributes, setAttributes }) {
                     />
                 )}
 
+                <link
+                    rel="stylesheet"
+                    href={`https://fonts.googleapis.com/css2?family=${fontFamily}`}
+                />
+
                 <RichText
+                	ref={elementRef}
                     tagName={tag}
                     value={text}
                     onChange={(value) => setAttributes({ text: value })}
@@ -344,6 +350,7 @@ export default function Edit({ attributes, setAttributes }) {
                         textAlign: align,
                         fontFamily: fontFamily
                     }}
+                    className={`custom-font-family-${fontFamily.replace(/ /g, "-").toLowerCase()}`}
                 />
 
                 {sub_heading_switcher && subheadingPosition === 'bottom' && (

@@ -1,5 +1,4 @@
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/attributes.js":
@@ -8,6 +7,7 @@
   \***************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -72,8 +72,10 @@ const attributes = {
   \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   FONT_FAMILYS: () => (/* binding */ FONT_FAMILYS),
 /* harmony export */   HEADING: () => (/* binding */ HEADING),
 /* harmony export */   NORMAL_HOVER: () => (/* binding */ NORMAL_HOVER),
 /* harmony export */   PRESETS: () => (/* binding */ PRESETS),
@@ -242,6 +244,301 @@ const SEPERATOR_STYLES = [{
   label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Ridge", "smart-heading"),
   value: "ridge"
 }];
+const FONT_FAMILYS = [{
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("ABeeZee", "smart-heading"),
+  value: "abeezee"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Abel", "smart-heading"),
+  value: "abel"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Abhaya Libre", "smart-heading"),
+  value: "abhaya-libre"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Abril Fatface", "smart-heading"),
+  value: "abril-fatface"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Abyssinica SIL", "smart-heading"),
+  value: "abyssinica-sil"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Aclonica", "smart-heading"),
+  value: "aclonica"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Acme", "smart-heading"),
+  value: "acme"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Actor", "smart-heading"),
+  value: "actor"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Adamina", "smart-heading"),
+  value: "adamina"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Adobe Blank", "smart-heading"),
+  value: "adobe-blank"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Advent Pro", "smart-heading"),
+  value: "advent-pro"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Aguafina Script", "smart-heading"),
+  value: "aguafina-script"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Akronim", "smart-heading"),
+  value: "akronim"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("aksarabaligalang", "smart-heading"),
+  value: "aksarabaligalang"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Aladin", "smart-heading"),
+  value: "aladin"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Aldrich", "smart-heading"),
+  value: "aldrich"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Alef", "smart-heading"),
+  value: "alef"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("alefhebrew", "smart-heading"),
+  value: "alefhebrew"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Alegreya", "smart-heading"),
+  value: "alegreya"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Alegreya Sans", "smart-heading"),
+  value: "alegreya-sans"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Alegreya Sans SC", "smart-heading"),
+  value: "alegreya-sans-sc"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Alegreya SC", "smart-heading"),
+  value: "alegreya-sc"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Aleo", "smart-heading"),
+  value: "aleo"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Alex Brush", "smart-heading"),
+  value: "alex-brush"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Alfa Slab One", "smart-heading"),
+  value: "alfa-slab-one"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Alice", "smart-heading"),
+  value: "alice"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Alike", "smart-heading"),
+  value: "alike"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Alike Angular", "smart-heading"),
+  value: "alike-angular"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Allan", "smart-heading"),
+  value: "allan"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Allerta", "smart-heading"),
+  value: "allerta"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Allerta Stencil", "smart-heading"),
+  value: "allerta-stencil"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Allura", "smart-heading"),
+  value: "allura"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Almendra", "smart-heading"),
+  value: "almendra"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Almendra Display", "smart-heading"),
+  value: "almendra-display"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Almendra SC", "smart-heading"),
+  value: "almendra-sc"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Amarante", "smart-heading"),
+  value: "amarante"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Amaranth", "smart-heading"),
+  value: "amaranth"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Amatic SC", "smart-heading"),
+  value: "amatic-sc"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Amatica SC", "smart-heading"),
+  value: "amatica-sc"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Amethysta", "smart-heading"),
+  value: "amethysta"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Amiko", "smart-heading"),
+  value: "amiko"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Amiri", "smart-heading"),
+  value: "amiri"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Amita", "smart-heading"),
+  value: "amita"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("amstelvaralpha", "smart-heading"),
+  value: "amstelvaralpha"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Anaheim", "smart-heading"),
+  value: "anaheim"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Andada", "smart-heading"),
+  value: "andada"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Andada SC", "smart-heading"),
+  value: "andada-sc"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Andika", "smart-heading"),
+  value: "andika"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Angkor", "smart-heading"),
+  value: "angkor"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Annie Use Your Telescope", "smart-heading"),
+  value: "annie-use-your-telescope"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Anonymous Pro", "smart-heading"),
+  value: "anonymous-pro"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Antic", "smart-heading"),
+  value: "antic"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Antic Didone", "smart-heading"),
+  value: "antic-didone"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Antic Slab", "smart-heading"),
+  value: "antic-slab"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Anton", "smart-heading"),
+  value: "anton"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Antonio", "smart-heading"),
+  value: "antonio"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Arapey", "smart-heading"),
+  value: "arapey"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Arbutus", "smart-heading"),
+  value: "arbutus"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Arbutus Slab", "smart-heading"),
+  value: "arbutus-slab"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Architects Daughter", "smart-heading"),
+  value: "architects-daughter"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Archivo", "smart-heading"),
+  value: "archivo"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Archivo Black", "smart-heading"),
+  value: "archivo-black"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Archivo Narrow", "smart-heading"),
+  value: "archivo-narrow"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("archivovfbeta", "smart-heading"),
+  value: "archivovfbeta"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Aref Ruqaa", "smart-heading"),
+  value: "aref-ruqaa"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Arima Madurai", "smart-heading"),
+  value: "arima-madurai"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Arimo", "smart-heading"),
+  value: "arimo"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Arizonia", "smart-heading"),
+  value: "arizonia"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Armata", "smart-heading"),
+  value: "armata"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Arsenal", "smart-heading"),
+  value: "arsenal"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Artifika", "smart-heading"),
+  value: "artifika"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Arvo", "smart-heading"),
+  value: "arvo"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Arya", "smart-heading"),
+  value: "arya"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Asap", "smart-heading"),
+  value: "asap"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Asap Condensed", "smart-heading"),
+  value: "asap-condensed"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("asapvfbeta", "smart-heading"),
+  value: "asapvfbeta"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Asar", "smart-heading"),
+  value: "asar"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Asset", "smart-heading"),
+  value: "asset"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Assistant", "smart-heading"),
+  value: "assistant"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Astloch", "smart-heading"),
+  value: "astloch"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Asul", "smart-heading"),
+  value: "asul"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Athiti", "smart-heading"),
+  value: "athiti"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Atomic Age", "smart-heading"),
+  value: "atomic-age"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Aubrey", "smart-heading"),
+  value: "aubrey"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Audiowide", "smart-heading"),
+  value: "audiowide"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Autour One", "smart-heading"),
+  value: "autour-one"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Average", "smart-heading"),
+  value: "average"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Average Sans", "smart-heading"),
+  value: "average-sans"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Averia Gruesa Libre", "smart-heading"),
+  value: "averia-gruesa-libre"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Averia Libre", "smart-heading"),
+  value: "averia-libre"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Averia Sans Libre", "smart-heading"),
+  value: "averia-sans-libre"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Averia Serif Libre", "smart-heading"),
+  value: "averia-serif-libre"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("B612", "smart-heading"),
+  value: "b612"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("B612 Mono", "smart-heading"),
+  value: "b612-mono"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Bad Script", "smart-heading"),
+  value: "bad-script"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Bahiana", "smart-heading"),
+  value: "bahiana"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Bahianita", "smart-heading"),
+  value: "bahianita"
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Bai Jamjuree", "smart-heading"),
+  value: "bai-jamjuree"
+}];
 
 /***/ }),
 
@@ -251,6 +548,7 @@ const SEPERATOR_STYLES = [{
   \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
@@ -277,6 +575,7 @@ const fontFamilyLists = _fontsfamilyNameList__WEBPACK_IMPORTED_MODULE_1__["defau
   \**********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -292,6 +591,7 @@ const fontsfamilyNameList = ["Default", "Baloo", "Baloo Bhai", "Baloo Bhaijaan",
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Edit)
@@ -306,8 +606,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _constants_constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./constants/constants */ "./src/constants/constants.js");
 /* harmony import */ var _constants_fontFamily__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./constants/fontFamily */ "./src/constants/fontFamily.js");
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
-
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
 
 
 
@@ -319,6 +620,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // Importing only fontFamilyLists
+
 
 
 function Edit({
@@ -351,13 +653,17 @@ function Edit({
     borderTop: `2px ${separator} #0170b9`,
     marginBottom: '15px'
   } : {};
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+
+  /* set default values for the style attributes */
+  const elementRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_6__.createRef)();
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_6__.useEffect)(() => {
     if (!fontFamily) {
+      let defaultFontFamily = window.getComputedStyle(elementRef.current).fontFamily;
       setAttributes({
-        fontFamily: 'Default'
+        fontFamily: defaultFontFamily
       });
     }
-  }, [fontFamily]);
+  }, [elementRef]);
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
     key: "controls"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -479,29 +785,7 @@ function Edit({
     initialOpen: true
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Font Family", "smart-heading"),
-    options: [{
-      label: 'Default',
-      value: null
-    },
-    // Set the value to null for the "Default" option
-    {
-      label: 'Arial',
-      value: 'Arial'
-    }, {
-      label: 'Helvetica',
-      value: 'Helvetica'
-    }, {
-      label: 'Times New Roman',
-      value: 'Times New Roman'
-    }, {
-      label: 'Courier New',
-      value: 'Courier New'
-    }, {
-      label: 'Verdana',
-      value: 'Verdana'
-    }
-    // Add more font families as needed
-    ],
+    options: _constants_constants__WEBPACK_IMPORTED_MODULE_4__.FONT_FAMILYS,
     value: fontFamily // Set the value directly without a fallback to "Default"
     ,
     onChange: value => setAttributes({
@@ -566,7 +850,11 @@ function Edit({
     style: {
       textAlign: align
     }
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("link", {
+    rel: "stylesheet",
+    href: `https://fonts.googleapis.com/css2?family=${fontFamily}`
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    ref: elementRef,
     tagName: tag,
     value: text,
     onChange: value => setAttributes({
@@ -578,7 +866,8 @@ function Edit({
       backgroundColor: background_color,
       textAlign: align,
       fontFamily: fontFamily
-    }
+    },
+    className: `custom-font-family-${fontFamily.replace(/ /g, "-").toLowerCase()}`
   }), sub_heading_switcher && subheadingPosition === 'bottom' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: sub_heading_tag,
     value: sub_heading_text,
@@ -606,6 +895,7 @@ function Edit({
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
@@ -638,6 +928,7 @@ __webpack_require__.r(__webpack_exports__);
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ save)
@@ -677,7 +968,6 @@ function save({
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
   }, show_separator_switcher && seperatorPosition === "top" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: `smart-title-separator`,
     style: {
       ...separatorStyles,
       textAlign: align
@@ -704,7 +994,6 @@ function save({
       textAlign: align
     }
   }), show_separator_switcher && seperatorPosition === "bottom" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: `smart-title-separator`,
     style: {
       ...separatorStyles,
       textAlign: align
@@ -718,11 +1007,9 @@ function save({
 /*!*************************!*\
   !*** ./src/editor.scss ***!
   \*************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
+throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nHookWebpackError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: expected \"{\".\n   ╷\n15 │     fontFamily,\r\n   │                ^\n   ╵\n  src\\editor.scss 15:16  root stylesheet\n    at tryRunOrWebpackError (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\HookWebpackError.js:88:9)\n    at __webpack_require_module__ (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:5076:12)\n    at __webpack_require__ (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:5033:18)\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:5104:20\n    at symbolIterator (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3485:9)\n    at done (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3527:9)\n    at Hook.eval [as callAsync] (eval at create (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:15:1)\n    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\tapable\\lib\\Hook.js:18:14)\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:5011:43\n    at symbolIterator (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3482:9)\n    at timesSync (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:2297:7)\n    at Object.eachLimit (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3463:5)\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:4976:16\n    at symbolIterator (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3485:9)\n    at timesSync (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:2297:7)\n    at Object.eachLimit (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3463:5)\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:4944:15\n    at symbolIterator (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3485:9)\n    at done (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3527:9)\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:4890:8\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:3369:32\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\HookWebpackError.js:68:3\n    at Hook.eval [as callAsync] (eval at create (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:15:1)\n    at Cache.store (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Cache.js:107:20)\n    at ItemCacheFacade.store (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\CacheFacade.js:141:15)\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:3369:11\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Cache.js:93:5\n    at Hook.eval [as callAsync] (eval at create (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:16:1)\n    at Cache.get (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Cache.js:75:18)\n    at ItemCacheFacade.get (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\CacheFacade.js:115:15)\n    at Compilation._codeGenerationModule (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:3338:9)\n    at codeGen (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:4878:11)\n    at symbolIterator (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3482:9)\n    at timesSync (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:2297:7)\n    at Object.eachLimit (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3463:5)\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:4908:14\n    at processQueue (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\util\\processAsyncTree.js:61:4)\n    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)\n-- inner error --\nError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: expected \"{\".\n   ╷\n15 │     fontFamily,\r\n   │                ^\n   ╵\n  src\\editor.scss 15:16  root stylesheet\n    at Object.<anonymous> (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\css-loader\\dist\\cjs.js??ruleSet[1].rules[4].use[1]!C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\postcss-loader\\dist\\cjs.js??ruleSet[1].rules[4].use[2]!C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\sass-loader\\dist\\cjs.js??ruleSet[1].rules[4].use[3]!C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\src\\editor.scss:1:7)\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\javascript\\JavascriptModulesPlugin.js:452:10\n    at Hook.eval [as call] (eval at create (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\tapable\\lib\\HookCodeFactory.js:19:10), <anonymous>:7:1)\n    at Hook.CALL_DELEGATE [as _call] (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\tapable\\lib\\Hook.js:14:14)\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:5078:39\n    at tryRunOrWebpackError (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\HookWebpackError.js:83:7)\n    at __webpack_require_module__ (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:5076:12)\n    at __webpack_require__ (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:5033:18)\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:5104:20\n    at symbolIterator (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3485:9)\n    at done (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3527:9)\n    at Hook.eval [as callAsync] (eval at create (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:15:1)\n    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\tapable\\lib\\Hook.js:18:14)\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:5011:43\n    at symbolIterator (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3482:9)\n    at timesSync (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:2297:7)\n    at Object.eachLimit (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3463:5)\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:4976:16\n    at symbolIterator (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3485:9)\n    at timesSync (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:2297:7)\n    at Object.eachLimit (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3463:5)\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:4944:15\n    at symbolIterator (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3485:9)\n    at done (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3527:9)\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:4890:8\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:3369:32\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\HookWebpackError.js:68:3\n    at Hook.eval [as callAsync] (eval at create (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:15:1)\n    at Cache.store (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Cache.js:107:20)\n    at ItemCacheFacade.store (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\CacheFacade.js:141:15)\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:3369:11\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Cache.js:93:5\n    at Hook.eval [as callAsync] (eval at create (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:16:1)\n    at Cache.get (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Cache.js:75:18)\n    at ItemCacheFacade.get (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\CacheFacade.js:115:15)\n    at Compilation._codeGenerationModule (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:3338:9)\n    at codeGen (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:4878:11)\n    at symbolIterator (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3482:9)\n    at timesSync (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:2297:7)\n    at Object.eachLimit (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\neo-async\\async.js:3463:5)\n    at C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\Compilation.js:4908:14\n    at processQueue (C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\webpack\\lib\\util\\processAsyncTree.js:61:4)\n    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)\n\nGenerated code for C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\css-loader\\dist\\cjs.js??ruleSet[1].rules[4].use[1]!C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\postcss-loader\\dist\\cjs.js??ruleSet[1].rules[4].use[2]!C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\node_modules\\sass-loader\\dist\\cjs.js??ruleSet[1].rules[4].use[3]!C:\\xampp\\htdocs\\test\\wp-content\\plugins\\smart-heading\\src\\editor.scss\n1 | throw new Error(\"Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\\nSassError: expected \\\"{\\\".\\n   ╷\\n15 │     fontFamily,\\r\\n   │                ^\\n   ╵\\n  src\\\\editor.scss 15:16  root stylesheet\");");
 
 /***/ }),
 
@@ -732,6 +1019,7 @@ __webpack_require__.r(__webpack_exports__);
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
@@ -744,6 +1032,7 @@ __webpack_require__.r(__webpack_exports__);
   \************************/
 /***/ ((module) => {
 
+"use strict";
 module.exports = window["React"];
 
 /***/ }),
@@ -754,6 +1043,7 @@ module.exports = window["React"];
   \*************************************/
 /***/ ((module) => {
 
+"use strict";
 module.exports = window["wp"]["blockEditor"];
 
 /***/ }),
@@ -764,6 +1054,7 @@ module.exports = window["wp"]["blockEditor"];
   \********************************/
 /***/ ((module) => {
 
+"use strict";
 module.exports = window["wp"]["blocks"];
 
 /***/ }),
@@ -774,7 +1065,19 @@ module.exports = window["wp"]["blocks"];
   \************************************/
 /***/ ((module) => {
 
+"use strict";
 module.exports = window["wp"]["components"];
+
+/***/ }),
+
+/***/ "@wordpress/element":
+/*!*********************************!*\
+  !*** external ["wp","element"] ***!
+  \*********************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = window["wp"]["element"];
 
 /***/ }),
 
@@ -784,6 +1087,7 @@ module.exports = window["wp"]["components"];
   \******************************/
 /***/ ((module) => {
 
+"use strict";
 module.exports = window["wp"]["i18n"];
 
 /***/ }),
@@ -794,6 +1098,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
+"use strict";
 module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/smart-heading","version":"0.1.0","title":"Smart Heading","category":"text","icon":"smiley","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"textdomain":"smart-heading","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
