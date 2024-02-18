@@ -57,8 +57,9 @@ import { createRef, useEffect } from "@wordpress/element";
 
 import './editor.scss';
 
-export default function Edit({ attributes, setAttributes }) {
+export default function Edit({ attributes, setAttributes, clientId,}) {
     const { 
+        blockID,
         text, 
         tag, 
         text_color, 
@@ -74,6 +75,10 @@ export default function Edit({ attributes, setAttributes }) {
         fontFamily,
 
     } = attributes;
+
+    setAttributes({
+		blockID: "smart_headings-" + clientId.slice(0, 8),
+	})
 
     const blockProps = useBlockProps();
 
@@ -269,6 +274,7 @@ export default function Edit({ attributes, setAttributes }) {
     value={fontFamily} // Set the value directly without a fallback to "Default"
     onChange={(value) => setAttributes({ fontFamily: value })}
 />
+
                                             <PanelColorSettings
                                                 title={__('Color', 'smart-heading')}
                                                 enableAlpha={true}
@@ -314,8 +320,8 @@ export default function Edit({ attributes, setAttributes }) {
                     controls={['left', 'center', 'right', 'justify']}
                 />
             </BlockControls>
-
-            <div {...blockProps}>
+            
+            <div {...blockProps} id={blockID}>
 
                 {show_separator_switcher && seperatorPosition === "top" && (
                     <div className={`smart-title-separator`} style={{ ...separatorStyles, textAlign: align }}></div>
@@ -333,13 +339,13 @@ export default function Edit({ attributes, setAttributes }) {
                     />
                 )}
 
-                <link
-                    rel="stylesheet"
-                    href={`https://fonts.googleapis.com/css2?family=${fontFamily}`}
-                />
+            <link
+				rel="stylesheet"
+				href={`https://fonts.googleapis.com/css?family=${fontFamily.replace(' ', '+')}`}
+			/>
 
                 <RichText
-                	ref={elementRef}
+                    ref={elementRef}
                     tagName={tag}
                     value={text}
                     onChange={(value) => setAttributes({ text: value })}
@@ -350,7 +356,6 @@ export default function Edit({ attributes, setAttributes }) {
                         textAlign: align,
                         fontFamily: fontFamily
                     }}
-                    className={`custom-font-family-${fontFamily.replace(/ /g, "-").toLowerCase()}`}
                 />
 
                 {sub_heading_switcher && subheadingPosition === 'bottom' && (

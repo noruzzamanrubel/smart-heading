@@ -28,3 +28,4 @@ function smart_heading_smart_heading_block_init() {
 	register_block_type( __DIR__ . '/build' );
 }
 add_action( 'init', 'smart_heading_smart_heading_block_init' );
+
