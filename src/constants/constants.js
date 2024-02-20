@@ -80,6 +80,7 @@ export const SEPERATOR_STYLES = [
 ];
 
 export const FONT_FAMILYS = [
+    { label: __("Default", "smart-heading"), value: "Default" },
     { label: __("ABeeZee", "smart-heading"), value: "ABeeZee" },
     { label: __("Abel", "smart-heading"), value: "Abel" },
     { label: __("Abhaya Libre", "smart-heading"), value: "Abhaya Libre" },

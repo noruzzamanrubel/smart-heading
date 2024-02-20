@@ -49,9 +49,6 @@ import {
     FONT_FAMILYS,
 } from "./constants/constants";
 
-// Importing only fontFamilyLists
-import { fontFamilyLists } from "./constants/fontFamily";
-
 import { createRef, useEffect } from "@wordpress/element";
 
 
@@ -267,13 +264,12 @@ export default function Edit({ attributes, setAttributes, clientId,}) {
                                             title={__("Title", "smart-heading")}
                                             initialOpen={true}
                                         >
-
-<SelectControl
-    label={__("Font Family", "smart-heading")}
-    options={FONT_FAMILYS}
-    value={fontFamily} // Set the value directly without a fallback to "Default"
-    onChange={(value) => setAttributes({ fontFamily: value })}
-/>
+                                            <SelectControl
+                                                label={__("Font Family", "smart-heading")}
+                                                options={FONT_FAMILYS}
+                                                value={fontFamily}
+                                                onChange={(value) => setAttributes({ fontFamily: value })}
+                                            />
 
                                             <PanelColorSettings
                                                 title={__('Color', 'smart-heading')}
