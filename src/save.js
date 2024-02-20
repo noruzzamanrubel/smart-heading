@@ -28,8 +28,10 @@ export default function save({ attributes }) {
         marginBottom: '15px'
     } : {};
 
+
     return (
         <>
+
             <div {...blockProps}>
 
                 {show_separator_switcher && seperatorPosition === "top" && (
@@ -42,6 +44,7 @@ export default function save({ attributes }) {
                         value={sub_heading_text}
                         style={{
                             textAlign: align,
+                            fontFamily: fontFamily, // Apply fontFamily here
                         }}
                     />
                 )}
@@ -53,8 +56,9 @@ export default function save({ attributes }) {
                         color: text_color,
                         backgroundColor: background_color,
                         textAlign: align,
-                        fontFamily: fontFamily,
+                        fontFamily: fontFamily, // Apply fontFamily here
                     }}
+                    className= "smart-heading"
                 />
 
                 {sub_heading_switcher && subheadingPosition === 'bottom' && ( 
@@ -63,6 +67,7 @@ export default function save({ attributes }) {
                         value={sub_heading_text}
                         style={{
                             textAlign: align,
+                            fontFamily: fontFamily, // Apply fontFamily here
                         }}
                     />
                 )}
