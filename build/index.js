@@ -3545,8 +3545,7 @@ function Edit({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Font Family", "smart-heading"),
     options: _constants_constants__WEBPACK_IMPORTED_MODULE_4__.FONT_FAMILYS,
-    value: fontFamily // Set the value directly without a fallback to "Default"
-    ,
+    value: fontFamily,
     onChange: value => setAttributes({
       fontFamily: value
     })
@@ -3733,7 +3732,8 @@ function save({
     tagName: sub_heading_tag,
     value: sub_heading_text,
     style: {
-      textAlign: align
+      textAlign: align,
+      fontFamily: fontFamily // Apply fontFamily here
     }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
     tagName: tag,
@@ -3742,13 +3742,15 @@ function save({
       color: text_color,
       backgroundColor: background_color,
       textAlign: align,
-      fontFamily: fontFamily
-    }
+      fontFamily: fontFamily // Apply fontFamily here
+    },
+    className: "smart-heading"
   }), sub_heading_switcher && subheadingPosition === 'bottom' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
     tagName: sub_heading_tag,
     value: sub_heading_text,
     style: {
-      textAlign: align
+      textAlign: align,
+      fontFamily: fontFamily // Apply fontFamily here
     }
   }), show_separator_switcher && seperatorPosition === "bottom" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     style: {

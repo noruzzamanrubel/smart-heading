@@ -25,7 +25,38 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 function smart_heading_smart_heading_block_init() {
-	register_block_type( __DIR__ . '/build' );
+    register_block_type( __DIR__ . '/build', array(
+        'render_callback' => 'gutenberg_examples_dynamic_render_callback',
+    ) );
 }
 add_action( 'init', 'smart_heading_smart_heading_block_init' );
+
+function gutenberg_examples_dynamic_render_callback( $attributes, $content ) {
+    // Access the fontFamily attribute from the $attributes array
+    $fontFamily = isset($attributes['fontFamily']) ? $attributes['fontFamily'] : '';
+
+    // Encode the font family name for use in URL
+    $encodedFontFamily = urlencode($fontFamily);
+
+    // Construct the Google Font URL with the encoded font family name
+    $googleFontUrl = "https://fonts.googleapis.com/css?family=$encodedFontFamily";
+
+    // Enqueue the Google Fonts stylesheet
+    wp_enqueue_style('google-fonts', $googleFontUrl);
+
+    // Define inline styles to apply the font family
+    $inline_style = "
+        h3,
+        h4 {
+            font-family: '$fontFamily';
+        }
+    ";
+
+    // Register and enqueue the style with a unique handle
+    wp_register_style('smart-heading-style', false);
+    wp_enqueue_style('smart-heading-style');
+    wp_add_inline_style('smart-heading-style', $inline_style);
+
+    return $content;
+}
 

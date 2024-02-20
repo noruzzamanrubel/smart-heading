@@ -271,7 +271,7 @@ export default function Edit({ attributes, setAttributes, clientId,}) {
 <SelectControl
     label={__("Font Family", "smart-heading")}
     options={FONT_FAMILYS}
-    value={fontFamily} // Set the value directly without a fallback to "Default"
+    value={fontFamily}
     onChange={(value) => setAttributes({ fontFamily: value })}
 />
 
