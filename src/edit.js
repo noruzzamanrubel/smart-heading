@@ -78,6 +78,7 @@ export default function Edit({ attributes, setAttributes, clientId,}) {
 	})
 
     const blockProps = useBlockProps();
+    
 
     // Define a variable to hold the separator styles based on separator
     
@@ -90,17 +91,17 @@ export default function Edit({ attributes, setAttributes, clientId,}) {
     } : {};
 
 
-	/* set default values for the style attributes */
-	const elementRef = createRef();
-	useEffect(() => {
+    /* set default values for the style attributes */
+    useEffect(() => {
+        if (fontFamily) {
+            const fontUrl = `https://fonts.googleapis.com/css?family=${fontFamily.replace(' ', '+')}`;
+            const linkElement = document.createElement('link');
+            linkElement.rel = 'stylesheet';
+            linkElement.href = fontUrl;
+            document.head.appendChild(linkElement);
+        }
+    }, [fontFamily]);
 
-		if (!fontFamily) {
-			let defaultFontFamily = window.getComputedStyle(
-				elementRef.current
-			).fontFamily;
-			setAttributes({ fontFamily: defaultFontFamily });
-		}
-	}, [elementRef]);
     
     
     return (
@@ -336,13 +337,7 @@ export default function Edit({ attributes, setAttributes, clientId,}) {
                     />
                 )}
 
-            <link
-				rel="stylesheet"
-				href={`https://fonts.googleapis.com/css?family=${fontFamily.replace(' ', '+')}`}
-			/>
-
                 <RichText
-                    ref={elementRef}
                     tagName={tag}
                     value={text}
                     onChange={(value) => setAttributes({ text: value })}

@@ -2,6 +2,7 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
 
 export default function save({ attributes }) {
     const { 
+        blockID,
         text, 
         tag, 
         text_color, 
@@ -18,7 +19,9 @@ export default function save({ attributes }) {
 
     } = attributes;
 
-    const blockProps = useBlockProps.save();
+    const blockProps = useBlockProps.save({
+        id: blockID,
+    });
 
     const separatorStyles = show_separator_switcher ? {
         display: 'inline-block',
@@ -56,7 +59,7 @@ export default function save({ attributes }) {
                         color: text_color,
                         backgroundColor: background_color,
                         textAlign: align,
-                        fontFamily: fontFamily, // Apply fontFamily here
+                        fontFamily: fontFamily,
                     }}
                     className= "smart-heading"
                 />
@@ -67,7 +70,7 @@ export default function save({ attributes }) {
                         value={sub_heading_text}
                         style={{
                             textAlign: align,
-                            fontFamily: fontFamily, // Apply fontFamily here
+                            fontFamily: fontFamily,
                         }}
                     />
                 )}

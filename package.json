@@ -20,6 +20,7 @@
 	"dependencies": {
 		"@wordpress/element": "^5.28.0",
 		"@wordpress/icons": "^9.42.0",
-		"lodash": "^4.17.21"
+		"lodash": "^4.17.21",
+		"webfontloader": "^1.6.28"
 	}
 }
